@@ -22,12 +22,31 @@
         </nav>
     </header>
 
-    <main>
+    <main class="questions-main">
         <div class="questions-container">
             <h2>Question Database</h2>
-            <br>
+            
+            <div class="filters-bar">
+                <input type="text" class="search-input" placeholder="Search for a question...">
+                <select class="filter-select">
+                    <option>All Categories</option>
+                    <option>Science</option>
+                    <option>History</option>
+                    <option>Entertainment</option>
+                </select>
+                <select class="filter-select">
+                    <option>All Difficulties</option>
+                    <option>Easy</option>
+                    <option>Medium</option>
+                    <option>Hard</option>
+                </select>
+            </div>
             
             <div class="question-item">
+                <div class="question-header">
+                    <span class="difficulty-badge easy">Easy ($100 - $1,000)</span>
+                    <span class="category-badge">Science</span>
+                </div>
                 <div class="question-text">1. What is the chemical symbol for Gold?</div>
                 <ul class="answers-list">
                     <li class="answer-box">A: Ag</li>
@@ -38,6 +57,10 @@
             </div>
 
             <div class="question-item">
+                <div class="question-header">
+                    <span class="difficulty-badge medium">Medium ($2,000 - $32,000)</span>
+                    <span class="category-badge">History</span>
+                </div>
                 <div class="question-text">2. Who painted the Mona Lisa?</div>
                 <ul class="answers-list">
                     <li class="answer-box">A: Vincent van Gogh</li>
@@ -45,6 +68,12 @@
                     <li class="answer-box">C: Michelangelo</li>
                     <li class="answer-box correct">D: Leonardo da Vinci</li>
                 </ul>
+            </div>
+
+            <div class="pagination">
+                <button class="page-btn">◄ Previous</button>
+                <span class="page-info">Page 1 of 24</span>
+                <button class="page-btn">Next ►</button>
             </div>
 
         </div>
