@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Your Knowledge - Questions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Test Your Knowledge</h1>
+        <nav>
+            <div class="dropdown">
+                <button class="dropbtn">Menu ▼</button>
+                <div class="dropdown-content">
+                    <a href="index.html">Home</a>
+                    <a href="user-panel.html">User Panel</a>
+                    <a href="questions.html">Questions List</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="questions-main">
+        <div class="questions-container">
+            <h2>Question Database</h2>
+            
+            <div class="filters-bar">
+                <input type="text" class="search-input" placeholder="Search for a question...">
+                <select class="filter-select">
+                    <option>All Categories</option>
+                    <option>Science</option> <!-- Placeholder -->
+                    <option>History</option> <!-- Placeholder -->
+                    <option>Entertainment</option> <!-- Placeholder -->
+                </select>
+                <select class="filter-select">
+                    <option>All Difficulties</option>
+                    <option>Easy</option>
+                    <option>Medium</option>
+                    <option>Hard</option>
+                </select>
+            </div>
+            
+            <div class="question-item">
+                <div class="question-header">
+                    <span class="difficulty-badge easy">Easy ($100 - $1,000)</span>
+                    <span class="category-badge">Science</span> <!-- Placeholder -->
+                </div>
+                <div class="question-text">1. What is the chemical symbol for Gold?</div> <!-- Placeholder -->
+                <ul class="answers-list"> <!-- Placeholder -->
+                    <li class="answer-box">A: Ag</li>
+                    <li class="answer-box correct">B: Au</li>
+                    <li class="answer-box">C: Fe</li>
+                    <li class="answer-box">D: Gd</li>
+                </ul>
+            </div>
+
+            <div class="question-item">
+                <div class="question-header">
+                    <span class="difficulty-badge medium">Medium ($2,000 - $32,000)</span> 
+                    <span class="category-badge">History</span> <!-- Placeholder -->
+                </div>
+                <div class="question-text">2. Who painted the Mona Lisa?</div> <!-- Placeholder -->
+                <ul class="answers-list"> 
+                    <li class="answer-box">A: Vincent van Gogh</li>
+                    <li class="answer-box">B: Pablo Picasso</li>
+                    <li class="answer-box">C: Michelangelo</li>
+                    <li class="answer-box correct">D: Leonardo da Vinci</li>
+                </ul>
+            </div>
+
+            <div class="pagination">
+                <button class="page-btn">◄ Previous</button>
+                <span class="page-info">Page 1 of 24</span>
+                <button class="page-btn">Next ►</button>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
