@@ -41,7 +41,7 @@ header h1 {
     letter-spacing: 2px;
 }
 
-/* CSS-only Dropdown Menu */
+/* Dropdown Menu */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -275,7 +275,7 @@ main {
     font-size: 0.95rem;
 }
 
-/* --- User Panel Specific Styles --- */
+/* --- User Panel --- */
 .panel-main {
     align-items: center;
     justify-content: flex-start;
@@ -350,7 +350,7 @@ main {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* --- Questions List Specific Styles --- */
+/* --- Questions List --- */
 .questions-main {
     justify-content: flex-start;
 }
@@ -433,7 +433,7 @@ main {
     font-weight: bold;
 }
 
-/* --- Game Page Specific Styles --- */
+/* --- Game Page --- */
 
 .game-main {
     flex-direction: row; /* Układ obok siebie */
@@ -547,7 +547,7 @@ main {
     background-color: #475569;
 }
 
-/* Prawa strona (Drzewko kwot) */
+/* Prawa strona (Drzewko wygranych) */
 .money-tree {
     width: 280px;
     background-color: var(--card-bg);
