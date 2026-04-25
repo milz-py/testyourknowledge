@@ -32,43 +32,29 @@
             </div>
 
             <div class="question-display">
-                <h2>In computer science, what does "GUI" stand for?</h2> <!-- Placeholder -->
+                <p id="game-status" class="game-status">Question 1 of 15</p>
+                <h2 id="question-text">Loading question...</h2>
             </div>
 
-            <div class="answers-board">
-                <button class="answer-btn"><span class="letter">A:</span> Global User Index</button> <!-- Placeholder -->
-                <button class="answer-btn"><span class="letter">B:</span> Graphical User Interface</button> <!-- Placeholder -->
-                <button class="answer-btn"><span class="letter">C:</span> General Utility Item</button> <!-- Placeholder -->
-                <button class="answer-btn"><span class="letter">D:</span> Gaming Unit Interface</button> <!-- Placeholder -->
-            </div>
+            <div id="answers-board", class="answers-board"></div>
 
             <div class="game-actions">
-                <button class="walk-away-btn">Walk Away with $1,000</button> <!-- Placeholder -->
+                <button id="next-question-btn" class="page-btn" disabled>Next question</button>
+                <button id="walk-away-btn" class="walk-away-btn">Walk Away</button>
+                <button id="restart-game-btn" class="walk-away-btn">Restart</button>
             </div>
 
         </div>
 
         <div class="money-tree">
-            <ul>
-                <li class="prize-level safe-haven">15 <span>$1,000,000</span></li>
-                <li class="prize-level">14 <span>$500,000</span></li>
-                <li class="prize-level">13 <span>$250,000</span></li>
-                <li class="prize-level">12 <span>$125,000</span></li>
-                <li class="prize-level">11 <span>$64,000</span></li>
-                <li class="prize-level safe-haven">10 <span>$32,000</span></li>
-                <li class="prize-level">9 <span>$16,000</span></li>
-                <li class="prize-level">8 <span>$8,000</span></li>
-                <li class="prize-level">7 <span>$4,000</span></li>
-                <li class="prize-level">6 <span>$2,000</span></li>
-                <li class="prize-level safe-haven current">5 <span>$1,000</span></li> <!-- Placeholder -->
-                <li class="prize-level passed">4 <span>$500</span></li> <!-- Placeholder -->
-                <li class="prize-level passed">3 <span>$300</span></li> <!-- Placeholder -->
-                <li class="prize-level passed">2 <span>$200</span></li> <!-- Placeholder -->
-                <li class="prize-level passed">1 <span>$100</span></li> <!-- Placeholder -->
-            </ul>
+            <ul id="money-tree-list"></ul>
         </div>
 
     </main>
-
+<script src="js/questions-data.js"></script>
+<script src="js/game-config.js"></script>
+<script src="js/game-state.js"></script>
+<script src="js/game-view.js"></script>
+<script src="js/game-page.js"></script>
 </body>
 </html>
