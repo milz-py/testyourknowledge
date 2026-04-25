@@ -605,3 +605,24 @@ main {
         grid-template-columns: 1fr; /* Odpowiedzi jedna pod drugą na telefonach */
     }
 }
+
+/* pod liste pytan dodalem zeby bylo ladnie */
+
+.questions-search {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.questions-status {
+    color: #94a3b8;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.questions-list {
+    width: 100%;
+}
+
+.filters-bar .page-btn {
+    min-width: 140px;
+}

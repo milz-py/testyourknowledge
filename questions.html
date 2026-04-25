@@ -25,59 +25,49 @@
     <main class="questions-main">
         <div class="questions-container">
             <h2>Question Database</h2>
-            
-            <div class="filters-bar">
-                <input type="text" class="search-input" placeholder="Search for a question...">
-                <select class="filter-select">
-                    <option>All Categories</option>
-                    <option>Science</option> <!-- Placeholder -->
-                    <option>History</option> <!-- Placeholder -->
-                    <option>Entertainment</option> <!-- Placeholder -->
+
+            <form id="questions-form" class="filters-bar">
+                <select id="amount" class="filter-select" name="amount">
+                    <option value="5">5 questions</option>
+                    <option value="10" selected>10 questions</option>
+                    <option value="15">15 questions</option>
                 </select>
-                <select class="filter-select">
-                    <option>All Difficulties</option>
-                    <option>Easy</option>
-                    <option>Medium</option>
-                    <option>Hard</option>
+
+                <select id="category" class="filter-select" name="category">
+                    <option value="">Any Category</option>
+                    <option value="9">General Knowledge</option>
+                    <option value="17">Science & Nature</option>
+                    <option value="18">Science: Computers</option>
+                    <option value="21">Sports</option>
+                    <option value="23">History</option>
                 </select>
-            </div>
-            
-            <div class="question-item">
-                <div class="question-header">
-                    <span class="difficulty-badge easy">Easy ($100 - $1,000)</span>
-                    <span class="category-badge">Science</span> <!-- Placeholder -->
-                </div>
-                <div class="question-text">1. What is the chemical symbol for Gold?</div> <!-- Placeholder -->
-                <ul class="answers-list"> <!-- Placeholder -->
-                    <li class="answer-box">A: Ag</li>
-                    <li class="answer-box correct">B: Au</li>
-                    <li class="answer-box">C: Fe</li>
-                    <li class="answer-box">D: Gd</li>
-                </ul>
-            </div>
 
-            <div class="question-item">
-                <div class="question-header">
-                    <span class="difficulty-badge medium">Medium ($2,000 - $32,000)</span> 
-                    <span class="category-badge">History</span> <!-- Placeholder -->
-                </div>
-                <div class="question-text">2. Who painted the Mona Lisa?</div> <!-- Placeholder -->
-                <ul class="answers-list"> 
-                    <li class="answer-box">A: Vincent van Gogh</li>
-                    <li class="answer-box">B: Pablo Picasso</li>
-                    <li class="answer-box">C: Michelangelo</li>
-                    <li class="answer-box correct">D: Leonardo da Vinci</li>
-                </ul>
-            </div>
+                <select id="difficulty" class="filter-select" name="difficulty">
+                    <option value="">Any Difficulty</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
 
-            <div class="pagination">
-                <button class="page-btn">◄ Previous</button>
-                <span class="page-info">Page 1 of 24</span>
-                <button class="page-btn">Next ►</button>
-            </div>
+                <button type="submit" class="page-btn">Load questions</button>
+            </form>
 
+            <input
+                type="text"
+                id="search-input"
+                class="search-input questions-search"
+                placeholder="Search loaded questions..."
+            >
+
+            <p id="questions-status" class="questions-status">Choose filters and load questions.</p>
+
+            <div id="questions-list" class="questions-list"></div>
         </div>
     </main>
 
+    <script src="js/questions-data.js"></script>
+    <script src="js/questions-service.js"></script>
+    <script src="js/questions-view.js"></script>
+    <script src="js/questions-page.js"></script>
 </body>
 </html>
