@@ -275,7 +275,26 @@ main {
     font-size: 0.95rem;
 }
 
-/* --- User Panel --- */
+.questions-search {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.questions-status {
+    color: #94a3b8;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.questions-list {
+    width: 100%;
+}
+
+.filters-bar .page-btn {
+    min-width: 140px;
+}
+
+/* User Panel  */
 .panel-main {
     align-items: center;
     justify-content: flex-start;
@@ -350,7 +369,7 @@ main {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* --- Questions List --- */
+/*  Questions List  */
 .questions-main {
     justify-content: flex-start;
 }
@@ -433,7 +452,7 @@ main {
     font-weight: bold;
 }
 
-/* --- Game Page --- */
+/*  Game Page  */
 
 .game-main {
     flex-direction: row; /* Układ obok siebie */
@@ -547,6 +566,51 @@ main {
     background-color: #475569;
 }
 
+.game-status {
+    color: #94a3b8;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.answer-btn.correct {
+    background-color: rgba(34, 197, 94, 0.2);
+    border-color: var(--correct);
+    color: var(--correct);
+    font-weight: bold;
+}
+
+.answer-btn.wrong {
+    background-color: rgba(239, 68, 68, 0.2);
+    border-color: #ef4444;
+    color: #ef4444;
+    font-weight: bold;
+}
+
+.answer-btn:disabled {
+    cursor: not-allowed;
+}
+
+.game-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.page-btn.disabled,
+.page-btn:disabled {
+    background-color: #334155;
+    color: #94a3b8;
+    cursor: not-allowed;
+    opacity: 0.6;
+    box-shadow: none;
+    transform: none;
+}
+
+.page-btn {
+    transition: all 0.3s ease;
+}
+
 /* Prawa strona (Drzewko wygranych) */
 .money-tree {
     width: 280px;
@@ -604,71 +668,4 @@ main {
     .answers-board {
         grid-template-columns: 1fr; /* Odpowiedzi jedna pod drugą na telefonach */
     }
-}
-
-/* pod liste pytan dodalem zeby bylo ladnie */
-
-.questions-search {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.questions-status {
-    color: #94a3b8;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-.questions-list {
-    width: 100%;
-}
-
-.filters-bar .page-btn {
-    min-width: 140px;
-}
-
-/* pod widok gierki i obsluge gierki */
-.game-status {
-    color: #94a3b8;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.answer-btn.correct {
-    background-color: rgba(34, 197, 94, 0.2);
-    border-color: var(--correct);
-    color: var(--correct);
-    font-weight: bold;
-}
-
-.answer-btn.wrong {
-    background-color: rgba(239, 68, 68, 0.2);
-    border-color: #ef4444;
-    color: #ef4444;
-    font-weight: bold;
-}
-
-.answer-btn:disabled {
-    cursor: not-allowed;
-}
-
-.game-actions {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.page-btn.disabled,
-.page-btn:disabled {
-    background-color: #334155;
-    color: #94a3b8;
-    cursor: not-allowed;
-    opacity: 0.6;
-    box-shadow: none;
-    transform: none;
-}
-
-.page-btn {
-    transition: all 0.3s ease;
 }
