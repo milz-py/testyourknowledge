@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("walk-away-btn").addEventListener("click", () => {
         walkAway();
+        saveFinishedGameIfNeeded();
         renderGame();
     });
 
