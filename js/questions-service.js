@@ -10,26 +10,48 @@ const categoryIdToName = {
 };
 
 
-//prsota funkcja pobierajaca pytania z mocka (mock znajdziecie w questions-data.js)
-function getQuestionsFromMock(filters) {
+let mockQuestionsApiUrl = null;
+
+function getMockQuestionsApiUrl() {
+    if (!mockQuestionsApiUrl) {
+        const mockApiResponse = JSON.stringify(mockOpenTdbResponse);
+        const mockApiBlob = new Blob([mockApiResponse], { type: "application/json" });
+        mockQuestionsApiUrl = URL.createObjectURL(mockApiBlob);
+    }
+
+    return mockQuestionsApiUrl;
+}
+
+async function getQuestionsFromMockApi(filters) {
+    const response = await fetch(getMockQuestionsApiUrl());
+
+    if (!response.ok) {
+        throw new Error(`Mock API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    return filterQuestions(data.results, filters);
+}
+
+function filterQuestions(questions, filters) {
     const selectedCategory = categoryIdToName[filters.category] || "";
 
-    let questions = mockOpenTdbResponse.results.filter((question) => {
+    let filteredQuestions = questions.filter((question) => {
         const matchesCategory = !selectedCategory || question.category === selectedCategory;
         const matchesDifficulty = !filters.difficulty || question.difficulty === filters.difficulty;
 
         return matchesCategory && matchesDifficulty && question.type == "multiple";
     });
 
-    questions = questions.slice(0, Number(filters.amount));
+    filteredQuestions = filteredQuestions.slice(0, Number(filters.amount));
 
-    return Promise.resolve(questions);
+    return filteredQuestions;
 }
 
 
 async function getQuestions(filters) {
-    return getQuestionsFromMock(filters);
-    // narazie do mocka, pozniej zmienimy na strzaly do prawdziwego api.
+    return getQuestionsFromMockApi(filters);
 }
 
 

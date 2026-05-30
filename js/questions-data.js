@@ -167,6 +167,166 @@ const mockOpenTdbResponse = {
             question: "Which sport uses a bat and ball?",
             correct_answer: "Baseball",
             incorrect_answers: ["Football", "Tennis", "Hockey"]
+        },
+        {
+            category: "Science: Computers",
+            type: "multiple",
+            difficulty: "easy",
+            question: "What does HTML stand for?",
+            correct_answer: "HyperText Markup Language",
+            incorrect_answers: ["HighText Machine Language", "HyperTool Multi Language", "Home Tool Markup Language"]
+        },
+        {
+            category: "Science: Computers",
+            type: "multiple",
+            difficulty: "medium",
+            question: "Which company created the Java programming language?",
+            correct_answer: "Sun Microsystems",
+            incorrect_answers: ["Microsoft", "IBM", "Apple"]
+        },
+        {
+            category: "Science: Computers",
+            type: "multiple",
+            difficulty: "hard",
+            question: "What is the time complexity of binary search on a sorted array?",
+            correct_answer: "O(log n)",
+            incorrect_answers: ["O(n)", "O(n log n)", "O(1)"]
+        },
+        {
+            category: "Science: Computers",
+            type: "multiple",
+            difficulty: "medium",
+            question: "Which protocol is commonly used to securely browse websites?",
+            correct_answer: "HTTPS",
+            incorrect_answers: ["FTP", "SMTP", "Telnet"]
+        },
+        {
+            category: "History",
+            type: "multiple",
+            difficulty: "easy",
+            question: "Which ancient civilization built the pyramids at Giza?",
+            correct_answer: "Egyptians",
+            incorrect_answers: ["Romans", "Greeks", "Persians"]
+        },
+        {
+            category: "History",
+            type: "multiple",
+            difficulty: "medium",
+            question: "The fall of the Berlin Wall happened in which year?",
+            correct_answer: "1989",
+            incorrect_answers: ["1979", "1991", "1985"]
+        },
+        {
+            category: "History",
+            type: "multiple",
+            difficulty: "hard",
+            question: "Who was the British Prime Minister at the start of World War II?",
+            correct_answer: "Neville Chamberlain",
+            incorrect_answers: ["Winston Churchill", "Clement Attlee", "Anthony Eden"]
+        },
+        {
+            category: "History",
+            type: "multiple",
+            difficulty: "medium",
+            question: "Which empire was ruled by Genghis Khan?",
+            correct_answer: "Mongol Empire",
+            incorrect_answers: ["Ottoman Empire", "Roman Empire", "Byzantine Empire"]
+        },
+        {
+            category: "Science & Nature",
+            type: "multiple",
+            difficulty: "easy",
+            question: "What is the largest planet in our solar system?",
+            correct_answer: "Jupiter",
+            incorrect_answers: ["Saturn", "Earth", "Neptune"]
+        },
+        {
+            category: "Science & Nature",
+            type: "multiple",
+            difficulty: "medium",
+            question: "What particle has a negative electric charge?",
+            correct_answer: "Electron",
+            incorrect_answers: ["Proton", "Neutron", "Photon"]
+        },
+        {
+            category: "Science & Nature",
+            type: "multiple",
+            difficulty: "hard",
+            question: "What is the SI unit of electric resistance?",
+            correct_answer: "Ohm",
+            incorrect_answers: ["Volt", "Ampere", "Watt"]
+        },
+        {
+            category: "Science & Nature",
+            type: "multiple",
+            difficulty: "medium",
+            question: "Which organ in the human body produces insulin?",
+            correct_answer: "Pancreas",
+            incorrect_answers: ["Liver", "Kidney", "Spleen"]
+        },
+        {
+            category: "General Knowledge",
+            type: "multiple",
+            difficulty: "easy",
+            question: "How many days are there in a leap year?",
+            correct_answer: "366",
+            incorrect_answers: ["365", "364", "367"]
+        },
+        {
+            category: "General Knowledge",
+            type: "multiple",
+            difficulty: "medium",
+            question: "Which currency is used in Japan?",
+            correct_answer: "Yen",
+            incorrect_answers: ["Won", "Yuan", "Ringgit"]
+        },
+        {
+            category: "General Knowledge",
+            type: "multiple",
+            difficulty: "hard",
+            question: "What is the smallest country in the world by area?",
+            correct_answer: "Vatican City",
+            incorrect_answers: ["Monaco", "San Marino", "Liechtenstein"]
+        },
+        {
+            category: "General Knowledge",
+            type: "multiple",
+            difficulty: "medium",
+            question: "Which ocean is the deepest?",
+            correct_answer: "Pacific Ocean",
+            incorrect_answers: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean"]
+        },
+        {
+            category: "Sports",
+            type: "multiple",
+            difficulty: "easy",
+            question: "How many points is a touchdown worth in American football?",
+            correct_answer: "6",
+            incorrect_answers: ["3", "7", "2"]
+        },
+        {
+            category: "Sports",
+            type: "multiple",
+            difficulty: "medium",
+            question: "Which country won the 2018 FIFA World Cup?",
+            correct_answer: "France",
+            incorrect_answers: ["Croatia", "Germany", "Brazil"]
+        },
+        {
+            category: "Sports",
+            type: "multiple",
+            difficulty: "hard",
+            question: "In tennis, what is the term for a score of zero?",
+            correct_answer: "Love",
+            incorrect_answers: ["Nil", "Blank", "Duck"]
+        },
+        {
+            category: "Sports",
+            type: "multiple",
+            difficulty: "medium",
+            question: "How long is an Olympic swimming pool?",
+            correct_answer: "50 meters",
+            incorrect_answers: ["25 meters", "75 meters", "100 meters"]
         }
     ]
 };

@@ -4,7 +4,11 @@ let gameState = {
     selectedAnswer: null,
     isGameOver: false,
     guaranteedPrize: 0,
-    currentPrize: 0
+    currentPrize: 0,
+    answerOrders: [],
+    statsSaved: false,
+    endReason: null,
+    lifelines: createInitialLifelinesState()
 };
 
 function startNewGame() {
@@ -17,7 +21,11 @@ function startNewGame() {
         selectedAnswer: null,
         isGameOver: false,
         guaranteedPrize: 0,
-        currentPrize: 0
+        currentPrize: 0,
+        answerOrders: [],
+        statsSaved: false,
+        endReason: null,
+        lifelines: createInitialLifelinesState()
     };
 }
 
@@ -45,9 +53,11 @@ function answerCurrentQuestion(answerText) {
 
         if (gameState.currentQuestionIndex === gameState.questions.length - 1) {
             gameState.isGameOver = true;
+            gameState.endReason = "completed";
         }
     } else {
         gameState.isGameOver = true;
+        gameState.endReason = "wrong_answer";
     }
 }
 
@@ -58,10 +68,12 @@ function goToNextQuestion() {
 
     gameState.currentQuestionIndex += 1;
     gameState.selectedAnswer = null;
+    resetQuestionLifelineEffects();
 }
 
 function walkAway() {
     gameState.isGameOver = true;
+    gameState.endReason = "walked_away";
 }
 
 function getFinalPrize() {
@@ -78,6 +90,40 @@ function getFinalPrize() {
     }
 
     return gameState.guaranteedPrize;
+}
+
+function useFiftyFifty() {
+    if (gameState.isGameOver || gameState.selectedAnswer || gameState.lifelines.fiftyFiftyUsed) {
+        return;
+    }
+
+    const question = getCurrentQuestion();
+    gameState.lifelines.fiftyFiftyUsed = true;
+    gameState.lifelines.eliminatedAnswers = shuffleArray(question.incorrect_answers).slice(0, 2);
+}
+
+function useAudienceHelp() {
+    if (gameState.isGameOver || gameState.selectedAnswer || gameState.lifelines.audienceUsed) {
+        return;
+    }
+
+    const question = getCurrentQuestion();
+    gameState.lifelines.audienceUsed = true;
+    gameState.lifelines.audienceHighlightedAnswer = question.correct_answer;
+}
+
+function resetQuestionLifelineEffects() {
+    gameState.lifelines.eliminatedAnswers = [];
+    gameState.lifelines.audienceHighlightedAnswer = null;
+}
+
+function createInitialLifelinesState() {
+    return {
+        fiftyFiftyUsed: false,
+        audienceUsed: false,
+        eliminatedAnswers: [],
+        audienceHighlightedAnswer: null
+    };
 }
 
 function shuffleArray(array) {

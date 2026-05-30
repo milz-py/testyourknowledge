@@ -12,6 +12,18 @@ document.addEventListener("DOMContentLoaded", () => {
         renderGame();
     });
 
+    const lifelineButtons = document.querySelectorAll(".lifeline-btn");
+
+    lifelineButtons[0].addEventListener("click", () => {
+        useFiftyFifty();
+        renderGame();
+    });
+
+    lifelineButtons[1].addEventListener("click", () => {
+        useAudienceHelp();
+        renderGame();
+    });
+
     document.getElementById("restart-game-btn").addEventListener("click", () => {
         startNewGame();
         renderGame();
