@@ -105,7 +105,8 @@ function renderGameActions() {
     }
 
     if (!selectedWasCorrect && gameState.selectedAnswer) {
-        document.getElementById("game-status").textContent = "Wrong answer!";
+        document.getElementById("game-status").textContent =
+            `Wrong answer! You won $${getFinalPrize().toLocaleString()}.`;
     }
 
     if (selectedWasCorrect && !gameState.isGameOver) {
