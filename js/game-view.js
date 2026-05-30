@@ -2,6 +2,7 @@ function renderGame() {
     renderQuestion();
     renderMoneyTree();
     renderGameActions();
+    renderLifelines();
 }
 
 function renderQuestion() {
@@ -18,9 +19,17 @@ function renderQuestion() {
     const answers = buildAnswersList(question);
 
     answers.forEach((answer) => {
+        if (gameState.lifelines.eliminatedAnswers.includes(answer.text)) {
+            return;
+        }
+
         const button = document.createElement("button");
         button.className = "answer-btn";
         button.dataset.answer = answer.text;
+
+        if (answer.text === gameState.lifelines.audienceHighlightedAnswer) {
+            button.classList.add("correct");
+        }
 
         if (gameState.selectedAnswer) {
             button.disabled = true;
@@ -38,6 +47,7 @@ function renderQuestion() {
 
         button.addEventListener("click", () => {
             answerCurrentQuestion(answer.text);
+            saveFinishedGameIfNeeded();
             renderGame();
         });
 
@@ -104,17 +114,37 @@ function renderGameActions() {
 
 }
 
+function renderLifelines() {
+    const lifelineButtons = document.querySelectorAll(".lifeline-btn");
+    const fiftyFiftyButton = lifelineButtons[0];
+    const audienceButton = lifelineButtons[1];
+    const lifelinesBlocked = gameState.isGameOver || Boolean(gameState.selectedAnswer);
+
+    if (!fiftyFiftyButton || !audienceButton) {
+        return;
+    }
+
+    fiftyFiftyButton.disabled = gameState.lifelines.fiftyFiftyUsed || lifelinesBlocked;
+    audienceButton.disabled = gameState.lifelines.audienceUsed || lifelinesBlocked;
+}
+
 function buildStatusText() {
     return `Question ${gameState.currentQuestionIndex + 1} of ${gameState.questions.length}`;
 }
 
 function buildAnswersList(question) {
-    const answers = [
-        question.correct_answer,
-        ...question.incorrect_answers
-    ];
+    const questionIndex = gameState.currentQuestionIndex;
 
-    return shuffleArray(answers).map((answer, index) => ({
+    if (!gameState.answerOrders[questionIndex]) {
+        const answers = [
+            question.correct_answer,
+            ...question.incorrect_answers
+        ];
+
+        gameState.answerOrders[questionIndex] = shuffleArray(answers);
+    }
+
+    return gameState.answerOrders[questionIndex].map((answer, index) => ({
         label: String.fromCharCode(65 + index),
         text: answer,
         isCorrect: answer === question.correct_answer

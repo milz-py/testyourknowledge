@@ -10,9 +10,9 @@
 
     <header>
         <h1>Test Your Knowledge</h1>
-        <nav>
+        <nav aria-label="Main navigation">
             <div class="dropdown">
-                <button class="dropbtn">Menu ▼</button>
+                <button class="dropbtn" aria-haspopup="true">Menu v</button>
                 <div class="dropdown-content">
                     <a href="index.html">Home</a>
                     <a href="user-panel.html">User Panel</a>
@@ -27,12 +27,14 @@
             <h2>Question Database</h2>
 
             <form id="questions-form" class="filters-bar">
-                <select id="amount" class="filter-select" name="amount">
+                <label class="sr-only" for="amount">Number of questions</label>
+                <select id="amount" class="filter-select" name="amount" required>
                     <option value="5">5 questions</option>
                     <option value="10" selected>10 questions</option>
                     <option value="15">15 questions</option>
                 </select>
 
+                <label class="sr-only" for="category">Category</label>
                 <select id="category" class="filter-select" name="category">
                     <option value="">Any Category</option>
                     <option value="9">General Knowledge</option>
@@ -42,6 +44,7 @@
                     <option value="23">History</option>
                 </select>
 
+                <label class="sr-only" for="difficulty">Difficulty</label>
                 <select id="difficulty" class="filter-select" name="difficulty">
                     <option value="">Any Difficulty</option>
                     <option value="easy">Easy</option>
@@ -49,9 +52,19 @@
                     <option value="hard">Hard</option>
                 </select>
 
+                <label class="sr-only" for="sort">Sort questions</label>
+                <select id="sort" class="filter-select" name="sort">
+                    <option value="default">Default order</option>
+                    <option value="difficulty-asc">Difficulty: Easy to Hard</option>
+                    <option value="difficulty-desc">Difficulty: Hard to Easy</option>
+                    <option value="category-asc">Category A-Z</option>
+                    <option value="question-asc">Question A-Z</option>
+                </select>
+
                 <button type="submit" class="page-btn">Load questions</button>
             </form>
 
+            <label class="sr-only" for="search-input">Search loaded questions</label>
             <input
                 type="text"
                 id="search-input"
@@ -59,9 +72,9 @@
                 placeholder="Search loaded questions..."
             >
 
-            <p id="questions-status" class="questions-status">Choose filters and load questions.</p>
+            <p id="questions-status" class="questions-status" aria-live="polite">Choose filters and load questions.</p>
 
-            <div id="questions-list" class="questions-list"></div>
+            <div id="questions-list" class="questions-list" aria-live="polite"></div>
         </div>
     </main>
 

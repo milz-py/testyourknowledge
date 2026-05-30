@@ -10,9 +10,9 @@
 
     <header>
         <h1>Test Your Knowledge</h1>
-        <nav>
+        <nav aria-label="Main navigation">
             <div class="dropdown">
-                <button class="dropbtn">Menu ▼</button>
+                <button class="dropbtn" aria-haspopup="true">Menu v</button>
                 <div class="dropdown-content">
                     <a href="index.html">Home</a>
                     <a href="user-panel.html">User Panel</a>
@@ -23,38 +23,36 @@
     </header>
 
     <main class="game-main">
-        
         <div class="game-board">
-            
-            <div class="lifelines">
-                <button class="lifeline-btn">50:50</button>
-                <button class="lifeline-btn">👥 Audience</button>
+            <div class="lifelines" aria-label="Lifelines">
+                <button class="lifeline-btn" aria-label="Use fifty fifty lifeline">50:50</button>
+                <button class="lifeline-btn" aria-label="Ask the audience lifeline">Audience</button>
             </div>
 
             <div class="question-display">
-                <p id="game-status" class="game-status">Question 1 of 15</p>
+                <p id="game-status" class="game-status" aria-live="polite">Question 1 of 15</p>
                 <h2 id="question-text">Loading question...</h2>
             </div>
 
-            <div id="answers-board", class="answers-board"></div>
+            <div id="answers-board" class="answers-board"></div>
 
             <div class="game-actions">
                 <button id="next-question-btn" class="page-btn" disabled>Next question</button>
                 <button id="walk-away-btn" class="walk-away-btn">Walk Away</button>
                 <button id="restart-game-btn" class="walk-away-btn">Restart</button>
             </div>
-
         </div>
 
-        <div class="money-tree">
+        <div class="money-tree" aria-label="Prize ladder">
             <ul id="money-tree-list"></ul>
         </div>
-
     </main>
-<script src="js/questions-data.js"></script>
-<script src="js/game-config.js"></script>
-<script src="js/game-state.js"></script>
-<script src="js/game-view.js"></script>
-<script src="js/game-page.js"></script>
+
+    <script src="js/questions-data.js"></script>
+    <script src="js/game-config.js"></script>
+    <script src="js/game-state.js"></script>
+    <script src="js/player-stats.js"></script>
+    <script src="js/game-view.js"></script>
+    <script src="js/game-page.js"></script>
 </body>
 </html>
